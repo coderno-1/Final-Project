@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
- 
-
 const productSchema = mongoose.Schema({
   image: String,
   productName: String,
@@ -15,4 +13,4 @@ const productSchema = mongoose.Schema({
   textcolor: String
 });
 
-module.exports = mongoose.model("Product-Schema", productSchema);
+module.exports = mongoose.model("Product", productSchema);

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/head", { title: "Manage Products | Admin" }) %>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <%- include("../partials/navbar", { user: user }) %>
+
+  <!-- Header -->
+  <section class="bg-gradient-to-br from-blue-600 to-blue-400 text-white">
+    <div class="max-w-7xl mx-auto px-6 py-12 flex justify-between items-center">
+      <div>
+        <h1 class="text-3xl font-bold">Manage Products</h1>
+        <p class="text-blue-100">Add, edit and delete products</p>
+      </div>
+
+      <a href="/admin/products/create"
+         class="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
+        + Add Product
+      </a>
+    </div>
+  </section>
+
+  <!-- Products Table -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+
+    <div class="bg-white rounded-xl shadow overflow-x-auto">
+      <table class="min-w-full text-sm">
+        <thead class="bg-gray-100 text-gray-700">
+          <tr>
+            <th class="px-6 py-3 text-left">Image</th>
+            <th class="px-6 py-3 text-left">Name</th>
+            <th class="px-6 py-3 text-left">Price</th>
+            <th class="px-6 py-3 text-left">Stock</th>
+            <th class="px-6 py-3 text-left">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- Example Product -->
+          <tr class="border-t">
+            <td class="px-6 py-4">
+              <div class="w-12 h-12 bg-blue-100 rounded flex items-center justify-center">
+                IMG
+              </div>
+            </td>
+            <td class="px-6 py-4 font-medium">Product One</td>
+            <td class="px-6 py-4">₹999</td>
+            <td class="px-6 py-4">25</td>
+            <td class="px-6 py-4 space-x-2">
+              <a href="/admin/products/edit/1"
+                 class="px-3 py-1 bg-yellow-400 text-white rounded hover:bg-yellow-500">
+                Edit
+              </a>
+              <button
+                class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600">
+                Delete
+              </button>
+            </td>
+          </tr>
+
+          <!-- Empty State (optional) -->
+          <!--
+          <tr>
+            <td colspan="5" class="text-center py-10 text-gray-500">
+              No products found
+            </td>
+          </tr>
+          -->
+
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <%- include("../partials/footer") %>
+
+</body>
+</html>

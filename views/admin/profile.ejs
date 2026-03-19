@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("../partials/head", { title: "Admin Profile | BlueShop" }) %>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <%- include("../partials/navbar", { user: user }) %>
+
+  <!-- Page Header -->
+  <section class="bg-gradient-to-br from-blue-600 to-blue-400 text-white">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+      <h1 class="text-3xl font-bold">Admin Profile</h1>
+      <p class="text-blue-100">Manage your admin account</p>
+    </div>
+  </section>
+
+  <!-- Profile Section -->
+  <section class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- Left Card (Profile Info) -->
+    <div class="bg-white rounded-xl shadow p-6 text-center">
+      <div class="w-28 h-28 mx-auto rounded-full bg-blue-100 flex items-center justify-center text-3xl font-bold text-blue-600">
+        A
+      </div>
+
+      <h2 class="text-xl font-semibold mt-4">Admin User</h2>
+      <p class="text-gray-500 text-sm">admin@blueshop.com</p>
+
+      <span class="inline-block mt-4 px-4 py-1 bg-green-100 text-green-700 text-sm rounded-full">
+        Administrator
+      </span>
+    </div>
+
+    <!-- Right Card (Details + Actions) -->
+    <div class="md:col-span-2 bg-white rounded-xl shadow p-8">
+
+      <h3 class="text-xl font-bold mb-6 text-blue-700">
+        Profile Details
+      </h3>
+
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div>
+          <label class="text-sm text-gray-600">Full Name</label>
+          <input
+            type="text"
+            value="Admin User"
+            class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div>
+          <label class="text-sm text-gray-600">Email</label>
+          <input
+            type="email"
+            value="admin@blueshop.com"
+            class="w-full mt-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div>
+          <label class="text-sm text-gray-600">Role</label>
+          <input
+            type="text"
+            value="Admin"
+            disabled
+            class="w-full mt-1 px-4 py-2 border rounded-lg bg-gray-100"
+          />
+        </div>
+
+        <div>
+          <label class="text-sm text-gray-600">Account Status</label>
+          <input
+            type="text"
+            value="Active"
+            disabled
+            class="w-full mt-1 px-4 py-2 border rounded-lg bg-gray-100"
+          />
+        </div>
+
+        <!-- Buttons -->
+        <div class="md:col-span-2 flex justify-end gap-4 mt-4">
+          <button
+            type="reset"
+            class="px-6 py-2 rounded-lg border border-gray-300 hover:bg-gray-100">
+            Reset
+          </button>
+
+          <button
+            type="submit"
+            class="px-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+            Update Profile
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <%- include("../partials/footer") %>
+
+</body>
+</html>

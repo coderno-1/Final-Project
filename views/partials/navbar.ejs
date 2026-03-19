@@ -1,0 +1,87 @@
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex justify-between items-center h-16">
+
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl font-bold text-blue-600">BlueShop</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-8 font-medium text-gray-700">
+        <a href="/" class="hover:text-blue-600 transition">Home</a>
+        <a href="/products" class="hover:text-blue-600 transition">Products</a>
+        <a href="/about" class="hover:text-blue-600 transition">About</a>
+        <a href="/contact" class="hover:text-blue-600 transition">Contact</a>
+      </div>
+
+      <!-- Right Side -->
+      <div class="hidden md:flex items-center space-x-4">
+        
+        <% if (user) { %>
+          <!-- Logged in -->
+          <span class="text-sm text-gray-600">
+            Hi, <span class="font-semibold"><%= user.fullname %></span>
+          </span>
+
+          <a href="/logout"
+             class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm transition">
+            Logout
+          </a>
+        <% } else { %>
+          <!-- Guest -->
+          <a href="/login"
+             class="text-blue-600 font-semibold hover:underline">
+            Login
+          </a>
+
+          <a href="/signup"
+             class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition">
+            Sign Up
+          </a>
+        <% } %>
+
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-gray-700 focus:outline-none">
+          ☰
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+    <div class="px-6 py-4 space-y-4 text-gray-700 font-medium">
+      <a href="/" class="block hover:text-blue-600">Home</a>
+      <a href="/products" class="block hover:text-blue-600">Products</a>
+      <a href="/about" class="block hover:text-blue-600">About</a>
+      <a href="/contact" class="block hover:text-blue-600">Contact</a>
+
+      <% if (user) { %>
+        <a href="/logout"
+           class="block bg-red-500 text-white px-4 py-2 rounded-lg text-center">
+          Logout
+        </a>
+      <% } else { %>
+        <a href="/login" class="block text-blue-600 text-center">Login</a>
+        <a href="/signup"
+           class="block bg-blue-600 text-white px-4 py-2 rounded-lg text-center">
+          Sign Up
+        </a>
+      <% } %>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn?.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
